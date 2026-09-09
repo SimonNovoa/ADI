@@ -1,0 +1,233 @@
+/* Reset básico y centrado en toda la pantalla */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #050505; /* Fondo de la pantalla general */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
+/* El rectángulo beige centrado */
+.card {
+  width: 320px;
+  padding: 20px;
+  border-radius: 160px 160px 50px 50px;
+
+  /* 1. Definimos un borde de 4px transparente */
+  border: 4px solid transparent;
+
+  /* 2. Doble fondo: el primero pinta el beige interno, el segundo hace el degradado en el borde */
+  background: 
+    linear-gradient(#d3b965, #d3b965) padding-box, 
+    linear-gradient( #ffedbc, #927e45) border-box;
+  transition: transform 0.3s ease; /* suaviza el cambio */
+}
+
+.card:hover {
+  transform: scale(1.05); /* la agranda un 5% */
+}
+
+/* Ajuste de la imagen */
+.card-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 160px;
+
+  /* 1. Reservamos el espacio del borde con transparente */
+  border: 4px solid transparent;
+
+  /* 2. Doble fondo: el primero es transparente para la imagen (o relleno),
+        y el segundo es el degradado desde abajo-izquierda a arriba-derecha (45deg) */
+  background: 
+    linear-gradient(transparent, transparent) padding-box, 
+    linear-gradient( #927e45, #ffedbc) border-box;
+}
+
+/* Espaciado de los textos */
+.card-content {
+  margin-top: 20px;
+  
+}
+
+.card-content h1 {
+    font-family: 'Bungee', cursive;
+    font-weight: 400;
+    color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  padding: 10px 15px;      /* Espacio interno entre el texto y el borde */
+  border-radius: 20px;     /* Bordes redondeados del marco */
+  text-align: center;      /* Centra el texto */
+
+  /* 1. Borde de 3px transparente */
+  border: 3px solid transparent;
+
+  /* 2. Fondo beige adentro y degradado de abajo-izquierda a arriba-derecha */
+  background: 
+    linear-gradient(#050505, #050505) padding-box, 
+    linear-gradient( #927e45, #ffedbc) border-box;
+}
+
+.card-content h4 {
+  font-family: 'Caprasimo';
+  font-weight: 400;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 1px;
+  padding: 10px 15px;      /* Espacio interno entre texto y borde */
+  border-radius: 20px 20px 0 0;
+
+  /* Ajusta el ancho exacto al contenido del texto */
+  display: inline-block;
+  
+  /* Centra la cajita dentro del contenedor (opcional) */
+  margin-left: auto;
+  margin-right: auto;
+
+  /* Bordes */
+  border: 3px solid transparent;
+  border-bottom: none;
+
+  /* Fondos */
+  background: 
+    linear-gradient(#c2aa5d, #c2aa5d) padding-box, 
+    linear-gradient(#927e45, #927e45) border-box;
+}
+
+.card-content .subtitle {
+    font-family: 'Josefin Sans', sans-serif;
+  font-size: 15px;
+  letter-spacing: 1px;
+  padding: 10px 15px;
+  margin-bottom: 5px;
+  
+  /* Redondeo en todas las esquinas excepto la superior-izquierda */
+  border-radius: 0 20px 20px 20px;
+
+  display: block;
+  width: fit-content;
+  margin-top: -3px; /* Sube 3px para solapar los bordes exactamente */
+
+  /* El borde superior SI EXISTE */
+  border: 3px solid transparent;
+
+  /* Aplicamos un fondo especial: el borde superior tiene un tramo transparente (el corte) */
+  background: 
+    linear-gradient(#c2aa5d, #c2aa5d) padding-box, 
+    linear-gradient(#927e45, #ffedbc) border-box;
+}
+
+.card-content .description {
+    font-family: 'Josefin Sans', sans-serif;
+  font-size: 15px;
+  letter-spacing: 1px;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  
+  /* Redondeo en todas las esquinas excepto la superior-izquierda */
+  border-radius: 0 20px 20px 20px;
+
+  display: block;
+  width: fit-content;
+  margin-top: -3px; /* Sube 3px para solapar los bordes exactamente */
+
+  /* El borde superior SI EXISTE */
+  border: 3px solid transparent;
+
+  /* Aplicamos un fondo especial: el borde superior tiene un tramo transparente (el corte) */
+  background: 
+    linear-gradient(#c2aa5d, #c2aa5d) padding-box, 
+    linear-gradient(#927e45, #ffedbc) border-box;
+}
+
+.card-content a {
+    display: block;
+font-family: 'Bungee', cursive;
+    font-weight: 400;
+    color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  padding: 10px 15px;      /* Espacio interno entre el texto y el borde */
+  border-radius: 20px;     /* Bordes redondeados del marco */
+  text-align: center;
+  text-decoration: none;  
+
+  /* 1. Borde de 3px transparente */
+  border: 3px solid transparent;
+
+  /* 2. Fondo beige adentro y degradado de abajo-izquierda a arriba-derecha */
+  background: 
+    linear-gradient(#050505, #050505) padding-box, 
+    linear-gradient( #927e45, #ffedbc) border-box;
+
+  transition: background 0.3s ease;
+}
+
+.card-content a:hover {
+    color: #000000;
+  background: 
+    linear-gradient(#f5f5f5, #f5f5f5) padding-box, 
+    linear-gradient( #ffedbc, #927e45) border-box;
+}
+
+
+
+.bg-marquee {
+  position: fixed;       /* la fija detrás de todo, no se mueve con el scroll */
+  top: 50%;
+  left: 50%;
+  width: 250vw;          /* más ancha que la pantalla para que la rotación no deje huecos */
+  height: 250vh;         /* más alta que la pantalla, por la misma razón */
+  display: flex;
+  flex-direction: column;       /* apila las filas una debajo de otra */
+  justify-content: space-between; /* reparte las filas parejo en toda la altura */
+  align-items: center;   /* centra cada fila horizontalmente dentro del contenedor */
+  transform: translate(-50%, -50%) rotate(-20deg); /* la centra en pantalla y la inclina en diagonal */
+  z-index: 0;             /* la manda detrás de la tarjeta */
+  overflow: hidden;
+}
+
+.bg-row {
+  display: flex;
+  width: max-content;    /* la fila mide justo lo que ocupan sus dos copias de contenido */
+  animation: scroll-loop 100s linear infinite; /* recorre siempre en el mismo sentido, sin parar */
+  will-change: transform;  /* evita redondeos/saltos de subpíxel en el loop */
+  backface-visibility: hidden;
+}
+
+.bg-group {
+  display: flex;
+  flex-shrink: 0;         /* evita que el grupo se achique para "entrar" en la fila */
+}
+
+.bg-item {
+  font-family: 'Bungee', cursive;
+  font-size: 50px;
+  color: #423b23;         /* apenas más claro que el fondo #050505, sutil */
+  margin-right: 90px;      /* separación real entre cada "S.N" */
+  flex-shrink: 0;
+}
+
+/* Truco de loop infinito sin salto: cada .bg-row contiene DOS copias idénticas
+   del mismo grupo de "S.N" (ver el HTML). Al desplazar exactamente -50%,
+   la segunda copia queda calzada en el lugar donde arrancó la primera,
+   entonces el reinicio del loop es invisible. */
+@keyframes scroll-loop {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.card {
+  position: relative;    /* para que quede arriba del fondo animado */
+  z-index: 1;
+}
